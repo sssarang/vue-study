@@ -24,6 +24,7 @@
             //2. 이벤트를 보내는 컴포넌트($emit 사용)
             methods: {
                 showLog: function(){
+                    //eventBus.$emit('이벤트명', '데이터');
                     eventBus.$emit('triggerEventBus', 100)
                 }
             }
@@ -33,7 +34,8 @@
             el: '#app',
             //3. 이벤트를 받는 컴포넌트($on 사용)
             created: function(){
-                eventBus.$on('triggerEventBus', function(value){
+                    //eventBus.$on('이벤트명', function(데이터){...});
+                    eventBus.$on('triggerEventBus', function(value){
                     console.log("이벤트를 전달받음. 전달받은 값 : ", value);
                 });
             }
